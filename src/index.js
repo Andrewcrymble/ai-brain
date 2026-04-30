@@ -9,6 +9,7 @@ import remarkableRouter from './routes/remarkable.js';
 import shortcutRouter from './routes/shortcut.js';
 import summaryRouter from './routes/summary.js';
 import dashboardRouter from './routes/dashboard.js';
+import captureRouter from './routes/capture.js';
 import { scheduleDailySummary } from './jobs/dailySummary.js';
 
 const log = pino({ level: config.LOG_LEVEL, name: 'app' });
@@ -27,6 +28,7 @@ app.use('/ingest/shortcut', shortcutRouter);
 app.use('/ingest', ingestRouter);
 app.use('/summary', summaryRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/capture', captureRouter);
 
 app.use((err, _req, res, _next) => {
   log.error({ err }, 'unhandled error');
