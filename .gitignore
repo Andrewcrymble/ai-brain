@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.local
+brain.db
+brain.db-journal
+brain.db-shm
+brain.db-wal
+*.log
+.DS_Store
+.vscode/
+.idea/
